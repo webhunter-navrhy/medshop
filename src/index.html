@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFE795">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1.5 29 9v14L16 30.5 3 23V9z' fill='%23E8AE2A' stroke='%23432904' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v={{ v.css }}">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="hex" viewBox="0 0 24 24"><path d="M12 1.6 21 6.8v10.4L12 22.4 3 17.2V6.8z" fill="currentColor"/></symbol>
+    <symbol id="hexo" viewBox="0 0 24 24"><path d="M12 2.2 20.5 7.1v9.8L12 21.8 3.5 16.9V7.1z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8zM9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a href="#top" class="nav__logo" aria-label="Med Shop — úvod"><img src="assets/logo.svg?v={{ v.logo }}" alt="Med Shop" width="168" height="38"></a>
+    <nav class="nav__links" id="menu">
+      <a href="#medy">Druhy medu</a>
+      <a href="#obchod">E-shop</a>
+      <a href="#staciirna">Ze stáčírny</a>
+      <a href="#velkoodber">Pro obchody</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="nav__cart" data-cart-open aria-label="Otevřít košík">
+      <svg><use href="#bag"/></svg><span class="nav__cart-t">Košík</span><b class="cart-count" data-count>0</b>
+    </button>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" data-burger><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__pattern" aria-hidden="true"></div>
+  <div class="hero__in">
+    <div class="hero__copy">
+      <p class="eyebrow"><svg><use href="#hex"/></svg>{{ site.hero.eyebrow }}</p>
+      <h1 class="hero__h1" data-split>
+        <span class="l1">{{ site.hero.h1a }}</span>
+        <span class="l2"><em>{{ site.hero.h1b }}</em></span>
+      </h1>
+      <p class="hero__lead">{{ site.hero.lead }}</p>
+      <div class="hero__cta">
+        <a href="#obchod" class="btn btn--dark" data-magnetic>Vybrat med <svg><use href="#arrow"/></svg></a>
+        <a href="#velkoodber" class="link-u">Odběr pro obchody</a>
+      </div>
+      <ul class="hero__facts">
+        {% for f in site.hero.facts %}<li><svg><use href="#hex"/></svg>{{ f }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__hex"><img src="assets/img/plastev.jpg" alt=""></div>
+      <div class="hero__ring"><svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circ">ze stáčírny v Lošově · med-shop.cz · ze stáčírny v Lošově · </textPath></text></svg></div>
+      <img class="hero__jar hero__jar--a" src="assets/img/cut/p56.webp" alt="">
+      <img class="hero__jar hero__jar--b" src="assets/img/cut/p45.webp" alt="">
+      <img class="hero__jar hero__jar--c" src="assets/img/cut/p69.webp" alt="">
+      <div class="hero__tag"><span>Med lipový · 950 g</span><b>220 Kč</b></div>
+    </div>
+  </div>
+  <a href="#medy" class="scroll-ind" aria-label="Posunout dolů"><span></span>Posunout</a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    {% for _ in range(2) %}<div class="marquee__set">{% for m in site.marquee %}<span>{{ m }}</span><svg><use href="#hex"/></svg>{% endfor %}</div>{% endfor %}
+  </div>
+</div>
+
+<!-- CO JE MED -->
+<section class="intro">
+  <div class="wrap intro__grid">
+    <p class="label rv">{{ site.intro.label }}</p>
+    <blockquote class="intro__quote rv">
+      Med je hodnotná potravina přírodního charakteru, vytvořená <em>společenstvím včel.</em>
+    </blockquote>
+    <div class="intro__side rv">
+      <p>{{ site.intro.text }}</p>
+      <p class="intro__closing">{{ site.intro.closing }}</p>
+    </div>
+  </div>
+  <div class="combs" aria-hidden="true">
+    {% for i in range(1,7) %}<div class="comb comb--{{ i }}"><img src="assets/img/vcela{{ i }}.jpg" alt="" loading="lazy"></div>{% endfor %}
+  </div>
+</section>
+
+<!-- SPEKTRUM (signature) -->
+<section class="spectrum" id="medy" style="--hc:{{ honeys[2].color }};--hi:{{ honeys[2].ink }}">
+  <div class="wrap">
+    <div class="spectrum__head">
+      <p class="label">Druhy medu</p>
+      <h2 class="h2">Pět medů, <em>pět barev</em></h2>
+      <p class="spectrum__hint">Od bělavého pastového po temně hnědý luční. Vyberte si sklenici.</p>
+    </div>
+    <div class="spectrum__stage">
+      <div class="spectrum__jar">
+        <div class="spectrum__glow"></div>
+        <img src="assets/img/cut/{{ honeys[2].img }}.webp" alt="{{ honeys[2].name }}" data-sp-img>
+      </div>
+      <div class="spectrum__info" aria-live="polite">
+        <p class="spectrum__trait" data-sp-trait>{{ honeys[2].trait }}</p>
+        <h3 class="spectrum__name" data-sp-name>{{ honeys[2].name }}</h3>
+        <p class="spectrum__text" data-sp-text>{{ honeys[2].text }}</p>
+        <div class="spectrum__vars" data-sp-vars></div>
+        <button class="btn btn--dark" data-sp-add><svg><use href="#bag"/></svg> Do košíku</button>
+      </div>
+    </div>
+    <div class="shelf" role="tablist" aria-label="Druhy medu">
+      {% for hny in honeys %}
+      <button class="shelf__item{% if loop.index0 == 2 %} is-on{% endif %}" role="tab" data-honey="{{ hny.id }}" style="--c:{{ hny.color }}">
+        <img src="assets/img/cut/{{ hny.img }}.webp" alt="" loading="lazy">
+        <span class="shelf__dot"></span>
+        <span class="shelf__name">{{ hny.short }}</span>
+      </button>
+      {% endfor %}
+      <div class="shelf__bar" aria-hidden="true">{% for hny in honeys %}<i style="background:{{ hny.color }}"></i>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+
+<!-- E-SHOP -->
+<section class="shop" id="obchod">
+  <div class="wrap">
+    <div class="shop__head">
+      <div>
+        <p class="label">E-shop</p>
+        <h2 class="h2 rv">Med <em>do každé spíže</em></h2>
+      </div>
+      <div class="shop__filters" role="tablist">
+        <button class="chip is-on" data-filter="all">Vše</button>
+        <button class="chip" data-filter="medy">Medy</button>
+        <button class="chip" data-filter="darky">Dárky</button>
+        <button class="chip" data-filter="ostatni">Vosk a sklenice</button>
+      </div>
+    </div>
+    <p class="demo-note"><svg><use href="#hexo"/></svg>Ukázka e-shopu v návrhu — košík funguje na zkoušku, nic se neobjednává. {{ site.price_note }}</p>
+
+    <div class="grid" data-grid>
+      {% for hny in honeys %}
+      <article class="card rv" data-cat="medy" data-id="{{ hny.id }}" style="--c:{{ hny.color }}">
+        <button class="card__media" data-detail="{{ hny.id }}" aria-label="Detail: {{ hny.name }}">
+          <span class="card__badge">{{ hny.tag }}</span>
+          <img src="assets/img/cut/{{ hny.variants[0].img }}.webp" alt="{{ hny.name }}" loading="lazy" data-card-img>
+        </button>
+        <div class="card__body">
+          <h3 class="card__name">{{ hny.name }}</h3>
+          <div class="pills" data-pills>
+            {% for vr in hny.variants %}<button class="pill{% if loop.first %} is-on{% endif %}" data-v="{{ loop.index0 }}">{{ vr.label }}</button>{% endfor %}
+          </div>
+          <div class="card__foot">
+            <span class="card__price" data-price>{{ hny.variants[0].price|kc }}</span>
+            <button class="add" data-add="{{ hny.id }}" aria-label="Přidat do košíku"><svg><use href="#plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+      {% for p in products %}
+      <article class="card rv{% if p.id == 'kos' %} card--feature{% endif %}{% if p.wide %} card--wide{% endif %}" data-cat="{{ p.cat }}" data-id="{{ p.id }}">
+        <button class="card__media" data-detail="{{ p.id }}" aria-label="Detail: {{ p.name }}">
+          {% if p.badge %}<span class="card__badge">{{ p.badge }}</span>{% endif %}
+          <img src="assets/img/cut/{{ p.img }}.webp" alt="{{ p.name }}" loading="lazy">
+        </button>
+        <div class="card__body">
+          {% if p.id == 'kos' %}<p class="card__kicker">Dárkový koš</p>{% endif %}
+          <h3 class="card__name">{{ p.name }}</h3>
+          <p class="card__var">{{ p.variant }}</p>
+          {% if p.id == 'kos' %}<p class="card__text">{{ p.text }} <em>{{ p.note }}</em></p>{% endif %}
+          <div class="card__foot">
+            {% if p.price %}
+            <span class="card__price">{{ p.price|kc }}{% if p.unit %}<small> / {{ p.unit }}</small>{% endif %}</span>
+            <button class="add" data-add="{{ p.id }}" aria-label="Přidat do košíku"><svg><use href="#plus"/></svg></button>
+            {% else %}
+            <span class="card__price card__price--ask">Cena dle množství</span>
+            <a class="link-u" href="mailto:{{ site.email }}?subject=Popt%C3%A1vka%20%E2%80%93%20{{ p.name|urlencode }}">Poptat</a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ZE STÁČÍRNY -->
+<section class="about" id="staciirna">
+  <div class="wrap about__grid">
+    <figure class="about__img clip-rv">
+      <img src="assets/img/plastev-ramek.jpg" alt="Zavíčkovaná plástev v rámku">
+      <figcaption>Provozovna je certifikována</figcaption>
+    </figure>
+    <div class="about__copy">
+      <p class="label rv">{{ site.about.label }}</p>
+      <h2 class="h2 rv">{{ site.about.h2a }} <em>{{ site.about.h2b }}</em></h2>
+      <p class="about__text rv">{{ site.about.text }}</p>
+      <p class="about__owner rv"><img src="assets/logo.svg?v={{ v.logo }}" alt="" width="120"> <span>{{ site.owner }}<br><small>{{ site.label }}, {{ site.city }}</small></span></p>
+      <ul class="scope rv">
+        {% for s in site.about.scope %}<li><svg><use href="#hex"/></svg>{{ s }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES + STATS (dark) -->
+<section class="process">
+  <div class="process__bg" aria-hidden="true"><img src="assets/img/ramek-900.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="stats">
+      {% for s in site.stats %}
+      <div class="stat rv"><b data-count-to="{{ s.n }}" data-suffix="{{ s.suffix }}">{{ s.n }}{{ s.suffix }}</b><span>{{ s.label }}</span></div>
+      {% endfor %}
+    </div>
+    <div class="process__head">
+      <p class="label label--light">{{ process.label }}</p>
+      <h2 class="h2 rv">Od suroviny <em>po sklenici</em></h2>
+      <p class="process__intro rv">{{ process.intro }}</p>
+    </div>
+    <ol class="steps">
+      {% for st in process.steps %}
+      <li class="step rv" style="--i:{{ loop.index0 }}">
+        <span class="step__hex"><svg><use href="#hexo"/></svg><i>{{ '%02d'|format(loop.index) }}</i></span>
+        <h3>{{ st.t }}</h3>
+        <p>{{ st.d }}</p>
+        {% if st.alt %}<p class="step__alt"><svg><use href="#hex"/></svg>{{ st.alt }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- VELKOODBĚR -->
+<section class="whole" id="velkoodber">
+  <div class="whole__pattern" aria-hidden="true"></div>
+  <div class="wrap whole__grid">
+    <div class="whole__copy">
+      <p class="label rv">{{ wholesale.label }}</p>
+      <h2 class="h2 rv">{{ wholesale.h2a }} <em>{{ wholesale.h2b }}</em></h2>
+      <p class="whole__text rv">{{ wholesale.text }}</p>
+      <ul class="checks">
+        {% for w in wholesale.why %}<li class="rv"><svg><use href="#check"/></svg>{{ w }}</li>{% endfor %}
+      </ul>
+      <a class="btn btn--dark" href="mailto:{{ site.email }}?subject=Popt%C3%A1vka%20velkoodb%C4%9Bru%20medu" data-magnetic>Poptat velkoodběr <svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="whole__visual">
+      <figure class="whole__ph whole__ph--a clip-rv"><img src="assets/img/konve.jpg" alt="Konve na med v provozovně"></figure>
+      <figure class="whole__ph whole__ph--b clip-rv"><img src="assets/img/sud.jpg" alt="Sud na med 280 kg"></figure>
+      <ul class="bulk">
+        {% for it in wholesale["items"] %}
+        <li><svg><use href="#hex"/></svg><span><b>{{ it.name }}</b>{{ it.note }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ŠKOLA MEDU -->
+<section class="school">
+  <div class="wrap school__grid">
+    <figure class="school__img"><img src="assets/img/naberatko-900.jpg" alt="Nabírátko na med nad sklenicí" loading="lazy"></figure>
+    <div>
+      <p class="label rv">{{ knowledge.label }}</p>
+      <h2 class="h2 rv">{{ knowledge.h2a }} <em>{{ knowledge.h2b }}</em></h2>
+      <div class="acc">
+        {% for it in knowledge["items"] %}
+        <details class="rv"{% if loop.first %} open{% endif %}>
+          <summary><span>{{ it.q }}</span><svg><use href="#plus"/></svg></summary>
+          <p>{{ it.a }}</p>
+        </details>
+        {% endfor %}
+      </div>
+      <p class="school__closing rv">„{{ knowledge.closing }}“</p>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+  <div class="wrap contact__grid">
+    <div>
+      <p class="label label--light">Kontakt</p>
+      <h2 class="contact__h rv">Napište, zavolejte, <em>nebo si pro med přijeďte</em></h2>
+      <p class="contact__note rv">{{ site.contact_note }}</p>
+      <div class="contact__cards">
+        <div class="cc rv"><span>Stáčírna medu</span><b>{{ site.owner }}</b><p>{{ site.address }}<br>{{ site.city }}</p></div>
+        <div class="cc rv"><span>Telefon</span><a href="tel:{{ site.mobile|tel }}">{{ site.mobile }}</a><p>tel./fax <a href="tel:{{ site.phone|tel }}">{{ site.phone }}</a></p></div>
+        <div class="cc rv"><span>E-mail</span><a href="mailto:{{ site.email }}">{{ site.email }}</a><p>IČ {{ site.ico }} · DIČ {{ site.dic }}</p></div>
+      </div>
+    </div>
+    <div class="contact__map rv">
+      <iframe title="Mapa — {{ site.address }}, {{ site.city }}" src="https://www.openstreetmap.org/export/embed.html?bbox={{ site.geo.lon - 0.012 }}%2C{{ site.geo.lat - 0.006 }}%2C{{ site.geo.lon + 0.012 }}%2C{{ site.geo.lat + 0.006 }}&amp;layer=mapnik&amp;marker={{ site.geo.lat }}%2C{{ site.geo.lon }}"></iframe>
+      <div class="contact__access">
+        <p>{{ site.access }}</p>
+        <a class="link-u link-u--light" href="{{ site.map }}" target="_blank" rel="noopener">Otevřít v Mapy.cz <svg><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img src="assets/logo-light.svg?v={{ v.logo }}" alt="Med Shop" width="190" class="foot__logo">
+    <nav class="foot__nav">
+      <a href="#medy">Druhy medu</a><a href="#obchod">E-shop</a><a href="#staciirna">Ze stáčírny</a><a href="#velkoodber">Pro obchody</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <p class="foot__copy">© {{ year }} Med Shop · {{ site.owner }}, {{ site.label|lower }} · {{ site.city }}</p>
+    <p class="foot__credits">Fotografie výrobků a provozovny: Med Shop. Ilustrační fotografie z Wikimedia Commons:
+      {% for c in credits %}{{ c.artist }} ({{ c.lic }}){% if not loop.last %}, {% endif %}{% endfor %}.
+    </p>
+  </div>
+</footer>
+
+<!-- KOŠÍK (ukázka) -->
+<div class="drawer" id="cart" aria-hidden="true">
+  <div class="drawer__veil" data-cart-close></div>
+  <aside class="drawer__panel" role="dialog" aria-label="Košík">
+    <div class="drawer__demo"><svg><use href="#hexo"/></svg>Ukázka košíku — v návrhu se nic neobjednává ani neplatí</div>
+    <div class="drawer__head"><h2>Košík</h2><button data-cart-close aria-label="Zavřít"><svg><use href="#close"/></svg></button></div>
+    <ul class="drawer__list" data-cart-list></ul>
+    <div class="drawer__empty" data-cart-empty>
+      <img src="assets/img/cut/p69.webp" alt="" width="90">
+      <p>Košík je zatím prázdný.<br>Vyberte si med z nabídky.</p>
+      <a href="#obchod" class="link-u" data-cart-close>Do e-shopu</a>
+    </div>
+    <div class="drawer__foot" data-cart-foot>
+      <fieldset class="ship">
+        <legend>Převzetí</legend>
+        <label><input type="radio" name="ship" checked> <span><b>Osobní odběr na provozovně</b>po telefonické domluvě, bez poštovného</span></label>
+        <label><input type="radio" name="ship"> <span><b>Zaslání zásilkou</b>cenu dopravy doplníme podle dopravce</span></label>
+      </fieldset>
+      <div class="drawer__sum"><span>Celkem za zboží</span><b data-cart-total>0 Kč</b></div>
+      <button class="btn btn--dark btn--full" data-checkout>Pokračovat k objednávce <svg><use href="#arrow"/></svg></button>
+    </div>
+  </aside>
+</div>
+
+<!-- DETAIL -->
+<div class="modal" id="detail" aria-hidden="true">
+  <div class="modal__veil" data-detail-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true">
+    <button class="modal__x" data-detail-close aria-label="Zavřít"><svg><use href="#close"/></svg></button>
+    <div class="modal__media" data-d-media><img alt="" data-d-img></div>
+    <div class="modal__body">
+      <p class="label" data-d-tag></p>
+      <h3 data-d-name></h3>
+      <p data-d-text></p>
+      <div class="pills" data-d-pills></div>
+      <div class="modal__foot"><b data-d-price></b><button class="btn btn--dark" data-d-add><svg><use href="#bag"/></svg> Do košíku</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" data-toast role="status"></div>
+
+<script>window.SHOP = {honeys: {{ honeys|json }}, products: {{ products|json }}};</script>
+<script src="assets/main.js?v={{ v.js }}" defer></script>
+</body>
+</html>

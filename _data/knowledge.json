@@ -1,0 +1,24 @@
+{
+  "label": "Malá škola medu",
+  "h2a": "Jak med",
+  "h2b": "skladovat a znát",
+  "items": [
+    {
+      "q": "Jak med správně uskladnit?",
+      "a": "Skladujte ho výhradně v uzavřeném obalu (sklo, nerezový kov) v suché a tmavé místnosti, při teplotě kolem 15 °C, nejvýše 25 °C, a relativní vlhkosti vzduchu nejvýše 70 %. Med snadno přijímá cizí pachy i vzdušnou vlhkost a škodí mu přímé sluneční paprsky."
+    },
+    {
+      "q": "Co med obsahuje?",
+      "a": "Jednoduché cukry — fruktózu (30–38 %) a glukózu (26–33 %), vyšší cukry jako sacharózu (1–10 %), enzymy, vitaminy B1, B2, B3 a C, organické kyseliny, hormonální látky, barviva a vonné látky. Z minerálií draslík, sodík, vápník, hořčík, železo, fosfor, síru, mangan, zinek a měď."
+    },
+    {
+      "q": "Proč pastový med nekrystalizuje?",
+      "a": "Pastovaný med je přírodní, zpravidla květový med, upravený do pastové konzistence řízenou krystalizací. Proto už v průběhu času dále nekrystalizuje a uchovává si všechny cenné látky."
+    },
+    {
+      "q": "Čím se liší medovicové (lesní) medy?",
+      "a": "Jsou zpravidla tmavší — způsobují to rostlinná barviva z mízy dřevin. Oproti květovým obsahují více fruktózy a dextrinů, hlavně ale víc minerálních látek a stopových prvků. Mají charakteristickou, velmi lahodnou vůni a chuť."
+    }
+  ],
+  "closing": "Med je vzácně vyvážený přírodní produkt, který by neměl chybět v naší stravě."
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Med Shop",
+  "title": "Med Shop — stáčírna medu Jiří Tichý, Olomouc-Lošov",
+  "description": "Lipový, květový, luční, akátový a pastový med ze stáčírny Jiřího Tichého v Olomouci-Lošově. Sklenice od 400 g, konve i sudy pro obchody.",
+  "owner": "Jiří Tichý",
+  "label": "Stáčírna medu",
+  "address": "Kopernikova 166/14",
+  "city": "779 00 Olomouc-Lošov",
+  "ico": "646 33 772",
+  "dic": "CZ5506082175",
+  "mobile": "724 296 055",
+  "phone": "585 355 056",
+  "email": "info@med-shop.cz",
+  "map": "https://mapy.cz/zakladni?q=Kopern%C3%ADkova%20166%2F14%2C%20Lo%C5%A1ov%2C%20Olomouc",
+  "hero": {
+    "eyebrow": "Stáčírna medu · Olomouc-Lošov",
+    "h1a": "Nektar naší přírody,",
+    "h1b": "stočený v Lošově",
+    "lead": "Lipový, květový, luční, akátový i pastový med ze stáčírny Jiřího Tichého. Ve sklenicích od 400 g pro domácnost, v konvích a sudech pro obchody.",
+    "facts": [
+      "Stáčírna od roku 2001",
+      "Certifikovaná provozovna",
+      "Dohled Státní veterinární správy"
+    ]
+  },
+  "marquee": [
+    "Med lipový",
+    "Med květový",
+    "Luční med",
+    "Akátový med",
+    "Pastový med",
+    "Dárkový koš",
+    "Včelí vosk",
+    "Sklenice na med"
+  ],
+  "intro": {
+    "label": "Co je med?",
+    "quote": "Med je hodnotná potravina přírodního charakteru, vytvořená společenstvím včel.",
+    "text": "Květový med je koncentrát nektaru z květů, snadno stravitelný a s pylovými zrny různých léčivých rostlin. Pastovaný med je zpracován pouze mechanicky, bez jakýchkoli přísad, a během skladování se už nemění.",
+    "closing": "Co může být lepší než sesbíraný nektar květů z rostlin a stromů naší přírody?"
+  },
+  "about": {
+    "label": "Ze stáčírny",
+    "h2a": "Z rodinného domu",
+    "h2b": "až na Váš stůl",
+    "text": "Stáčírna medu vznikla v roce 2001 v rodinném domě, kde úpravou vznikla provozovna na stáčení a balení medu s příslušenstvím. Uvnitř je tank na stáčení medu, manipulační prostor, tepelná komora, regály na uskladnění medu, prostor pro sklenice a obaly a mycí prostor.",
+    "scope": [
+      "Nákup suroviny (medu)",
+      "Zpracování a ošetření",
+      "Zabalení",
+      "Skladování",
+      "Přeprava a prodej"
+    ]
+  },
+  "stats": [
+    {
+      "n": 2001,
+      "suffix": "",
+      "label": "rok vzniku stáčírny v Lošově"
+    },
+    {
+      "n": 5,
+      "suffix": "",
+      "label": "druhů medu v nabídce"
+    },
+    {
+      "n": 35,
+      "suffix": " kg",
+      "label": "konve pro obchody a pekárny"
+    },
+    {
+      "n": 280,
+      "suffix": " kg",
+      "label": "největší balení — sud"
+    }
+  ],
+  "contact_note": "Zásilku si můžete po telefonické domluvě vyzvednout přímo na provozovně, bez poplatku za poštovné.",
+  "access": "Příjezd k provozovně vede po stávající komunikaci v ulici Kopernikova a dále po vlastním pozemku až k objektu.",
+  "price_note": "Ceny převzaté ze současného webu med-shop.cz.",
+  "geo": {
+    "lat": 49.62056,
+    "lon": 17.36644
+  }
+}

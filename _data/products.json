@@ -1,0 +1,7 @@
+[
+  {"id": "kos", "cat": "darky", "name": "Dárkový koš s medem", "variant": "lipový 950 g + pastový 900 g", "price": 540, "img": "p71", "text": "Dva druhy medů v proutěném koši — med květový (lipový) 950 g a med květový pastový 900 g.", "badge": "Na dárek", "note": "Další varianty připravujeme."},
+  {"id": "medvidek", "cat": "darky", "name": "Medvídek s akátovým medem", "variant": "plněný akátovým medem", "price": 90, "img": "p70", "text": "Medvídek plněný akátovým medem — vodojasným nebo nažloutlým, čirým a dlouho tekutým.", "badge": "Pro děti"},
+  {"id": "nestandardni", "cat": "medy", "name": "Med nestandardní", "variant": "950 g · pekařský med", "price": 90, "img": "p79", "text": "Med, který se z nějakého důvodu neprodal a je ve výprodeji. Označen jako nestandardní (pekařský med). Vhodný jako sladidlo do perníku a cukroví.", "badge": "Výprodej"},
+  {"id": "vosk", "cat": "ostatni", "name": "Včelí vosk", "variant": "1 kg", "price": 360, "unit": "kg", "img": "p67", "wide": true, "text": "Včelí vosk — přírodní produkt."},
+  {"id": "sklenice", "cat": "ostatni", "name": "Sklenice Stako OP 210 ml", "variant": "cena dle množství", "price": null, "img": "p42", "text": "Sklenice vhodné na přesnídávky, marmelády a zavařeniny — zejména pro menší objemy."}
+]

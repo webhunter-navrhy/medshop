@@ -1,0 +1,37 @@
+{
+  "label": "Pro obchody a pekárny",
+  "h2a": "Med ve velkém,",
+  "h2b": "s evidencí původu",
+  "text": "Zpracujeme nabídku, připravíme, zabalíme a dovezeme. Druh medu podle Vašeho požadavku.",
+  "why": [
+    "Certifikace a dohled Státní veterinární správy",
+    "Dohledání původu zboží, evidence původu",
+    "Čárový kód, různé druhy balení",
+    "Příjem objednávek, zpracování a doručení na Váš obchod",
+    "Pečlivé balení zásilek",
+    "Dovoz objednaného zboží",
+    "Vyzvednutí na provozovně po telefonické domluvě, bez poštovného"
+  ],
+  "items": [
+    {
+      "name": "Med, konev 35 kg",
+      "note": "Parametry dle dohody",
+      "img": "konve.jpg"
+    },
+    {
+      "name": "Akátový med, konev 35 kg",
+      "note": "Akátový med",
+      "img": null
+    },
+    {
+      "name": "Med, sud 280 kg",
+      "note": "Parametry dle dohody",
+      "img": "sud.jpg"
+    },
+    {
+      "name": "Závazné objednávky na med",
+      "note": "Druh medu dle požadavku",
+      "img": null
+    }
+  ]
+}

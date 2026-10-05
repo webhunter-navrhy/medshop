@@ -1,0 +1,12 @@
+{
+  "label": "Jak med vzniká u nás",
+  "intro": "Každá sklenice projde stejnou cestou — od nákupu suroviny až po prodej. Tekutý a pastový med se liší jen v tom, co se s ním děje uprostřed.",
+  "steps": [
+    {"t": "Nákup medu", "d": "Surovinu nakupujeme a evidujeme její původ."},
+    {"t": "Filtrace a čeření", "d": "Tekutý med se přefiltruje a vyčeří.", "alt": "Pastový med se pastuje — řízenou krystalizací."},
+    {"t": "Stáčení a plnění", "d": "Med se stáčí z tanku do sklenic a obalů."},
+    {"t": "Kontrolní vážení", "d": "Každé balení se kontrolně převáží."},
+    {"t": "Etiketování", "d": "Sklenice dostane etiketu s čárovým kódem."},
+    {"t": "Skladování a prodej", "d": "V suchu, temnu a chladu až do prodeje."}
+  ]
+}
