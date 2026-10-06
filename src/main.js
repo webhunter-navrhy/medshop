@@ -190,7 +190,7 @@
     else if (rm) cart.splice(+rm.dataset.rm, 1); else return;
     save(); renderCart();
   });
-  const openCart = () => { drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden', false); };
+  const openCart = () => { $('[data-toast]').classList.remove('is-on'); drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden', false); };
   const closeCart = () => { drawer.classList.remove('is-open'); drawer.setAttribute('aria-hidden', true); };
   $$('[data-cart-open]').forEach(b => b.addEventListener('click', openCart));
   $$('[data-cart-close]').forEach(b => b.addEventListener('click', closeCart));
