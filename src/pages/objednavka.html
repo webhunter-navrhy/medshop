@@ -1,0 +1,98 @@
+{# {"out": "objednavka/index.html", "id": "objednavka", "title": "Objednávka | Med Shop", "desc": "Dokončení objednávky medu ze stáčírny v Olomouci-Lošově.", "noindex": true} #}
+{% extends "base.html" %}
+{% block nav_class %} is-solid{% endblock %}
+{% block body_class %}page-checkout{% endblock %}
+{% block content %}
+<section class="co" data-checkout-page>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Drobečková navigace"><a href="{{ root }}">Med Shop</a><span>/</span><a href="{{ root }}#obchod">E-shop</a><span>/</span><span aria-current="page">Objednávka</span></nav>
+
+    <!-- prázdný košík -->
+    <div class="co__empty" data-co-empty hidden>
+      <img src="{{ root }}assets/img/cut/p69.webp" alt="" width="110">
+      <h1 class="co__h">Košík je prázdný</h1>
+      <p>Vyberte si med z nabídky a pak se sem vraťte.</p>
+      <a class="btn btn--dark" href="{{ root }}#obchod">Do e-shopu <svg><use href="#arrow"/></svg></a>
+    </div>
+
+    <!-- formulář -->
+    <div class="co__grid" data-co-form hidden>
+      <form class="co__form" novalidate data-co>
+        <h1 class="co__h">Objednávka</h1>
+        {% if shop.test_notice %}<p class="demo-note"><svg><use href="#hexo"/></svg>{{ shop.test_notice }}</p>{% endif %}
+
+        <fieldset class="co__box">
+          <legend><i>1</i>Kontaktní údaje</legend>
+          <label class="fld fld--full"><span>Jméno a příjmení</span><input name="name" autocomplete="name" required maxlength="100"></label>
+          <label class="fld"><span>E-mail</span><input name="email" type="email" autocomplete="email" required maxlength="190"></label>
+          <label class="fld"><span>Telefon</span><input name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="+420 …"></label>
+        </fieldset>
+
+        <fieldset class="co__box">
+          <legend><i>2</i>Převzetí</legend>
+          <div class="ship ship--co" data-ship>
+            {% for s in shipping %}
+            <label><input type="radio" name="ship" value="{{ s.id }}"{% if loop.first %} checked{% endif %} data-price="{{ s.price }}" data-free="{{ s.free_from or '' }}" data-address="{{ 1 if s.address else 0 }}"> <span><b>{{ s.name }}<em>{% if s.price %}{{ s.price|kc }}{% else %}zdarma{% endif %}</em></b>{% if s.note %}{{ s.note }}{% endif %}{% if s.free_from %} Od {{ s.free_from|kc }} zdarma.{% endif %}</span></label>
+            {% endfor %}
+          </div>
+        </fieldset>
+
+        <fieldset class="co__box">
+          <legend><i>3</i>Adresa <small data-addr-opt>(nepovinná)</small></legend>
+          <label class="fld fld--full"><span>Ulice a číslo popisné</span><input name="street" autocomplete="street-address" maxlength="150"></label>
+          <label class="fld"><span>Město</span><input name="city" autocomplete="address-level2" maxlength="80"></label>
+          <label class="fld fld--s"><span>PSČ</span><input name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="6" placeholder="779 00"></label>
+        </fieldset>
+
+        <fieldset class="co__box">
+          <legend><i>4</i>Poznámka <small>(nepovinná)</small></legend>
+          <label class="fld fld--full"><span class="sr">Poznámka k objednávce</span><textarea name="note" rows="3" maxlength="1500" placeholder="Např. kdy se Vám hodí vyzvednutí"></textarea></label>
+        </fieldset>
+
+        <div class="co__box co__pay">
+          <p class="co__pay-h"><svg><use href="#hex"/></svg>Platba bankovním převodem</p>
+          <p>{{ shop.checkout_note }}</p>
+        </div>
+
+        <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="agree"><input type="checkbox" name="agree" required> <span>Souhlasím s <a href="{{ root }}obchodni-podminky/" target="_blank">obchodními podmínkami</a> a beru na vědomí <a href="{{ root }}ochrana-osobnich-udaju/" target="_blank">zpracování osobních údajů</a> pro vyřízení objednávky.</span></label>
+        <p class="co__err" data-co-err role="alert"></p>
+        <button class="btn btn--dark btn--full co__submit" type="submit" data-co-submit>Objednat s povinností platby <svg><use href="#arrow"/></svg></button>
+      </form>
+
+      <aside class="co__sum">
+        <div class="co__sum-in">
+          <div class="co__sum-head"><h2>Shrnutí</h2><button class="link-u" type="button" data-cart-open>Upravit košík</button></div>
+          <ul class="co__items" data-co-items></ul>
+          <dl class="co__tot">
+            <div><dt>Zboží</dt><dd data-co-sub>0 Kč</dd></div>
+            <div><dt>Převzetí</dt><dd data-co-ship>zdarma</dd></div>
+            <div class="co__grand"><dt>Celkem k úhradě</dt><dd data-co-total>0 Kč</dd></div>
+          </dl>
+          {% if shop.vat_note %}<p class="co__vat">{{ shop.vat_note }}</p>{% endif %}
+        </div>
+      </aside>
+    </div>
+
+    <!-- poděkování + platba -->
+    <div class="co__done" data-co-done hidden>
+      <p class="label">Objednávka přijata</p>
+      <h1 class="co__h">Děkujeme, objednávka č. <span data-d-num></span> je u nás</h1>
+      <p class="co__lead" data-d-lead></p>
+      <div class="payc" data-d-pay>
+        <div class="payc__qr"><div data-d-qr></div><span>QR Platba – naskenujte v aplikaci své banky</span></div>
+        <dl class="payc__rows">
+          <div data-row-acc><dt>Číslo účtu</dt><dd><b data-d-acc></b><button type="button" class="cpy" data-copy="acc" aria-label="Zkopírovat číslo účtu"><svg><use href="#copy"/></svg></button></dd></div>
+          <div><dt>IBAN</dt><dd><span data-d-iban></span><button type="button" class="cpy" data-copy="iban" aria-label="Zkopírovat IBAN"><svg><use href="#copy"/></svg></button></dd></div>
+          <div><dt>Částka</dt><dd><b data-d-amount></b><button type="button" class="cpy" data-copy="amount" aria-label="Zkopírovat částku"><svg><use href="#copy"/></svg></button></dd></div>
+          <div><dt>Variabilní symbol</dt><dd><b data-d-vs></b><button type="button" class="cpy" data-copy="vs" aria-label="Zkopírovat variabilní symbol"><svg><use href="#copy"/></svg></button></dd></div>
+          <div data-row-due><dt>Splatnost</dt><dd data-d-due></dd></div>
+        </dl>
+      </div>
+      <p class="payc__none" data-d-nopay hidden>Platební údaje Vám pošleme e-mailem. Jako variabilní symbol použijte číslo objednávky.</p>
+      <p class="co__thanks">{{ shop.thanks }}</p>
+      <div class="co__done-acts"><a class="btn btn--dark" href="{{ root }}">Zpět na úvod <svg><use href="#arrow"/></svg></a><a class="link-u" href="{{ root }}#kontakt">Kontakt na stáčírnu</a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

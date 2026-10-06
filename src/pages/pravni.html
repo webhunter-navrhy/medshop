@@ -1,0 +1,19 @@
+{# {"id": "pravni", "per": "legal"} #}
+{% extends "base.html" %}
+{% block nav_class %} is-solid{% endblock %}
+{% block content %}
+<section class="legal">
+  <div class="wrap legal__in">
+    <nav class="crumbs" aria-label="Drobečková navigace"><a href="{{ root }}">Med Shop</a><span>/</span><span aria-current="page">{{ doc.title }}</span></nav>
+    <h1 class="legal__h">{{ doc.title }}</h1>
+    {% if doc.intro %}<div class="legal__intro">{{ doc.intro|paras }}</div>{% endif %}
+    {% for sec in doc.sections %}
+    <section class="legal__sec">
+      <h2>{% if doc.numbered %}{{ loop.index }}. {% endif %}{{ sec.h }}</h2>
+      {{ sec.p|paras }}
+    </section>
+    {% endfor %}
+    {% if doc.updated %}<p class="legal__upd">Platné od {{ doc.updated }}.</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

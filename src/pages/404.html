@@ -1,0 +1,11 @@
+{# {"out": "404.html", "id": "404", "title": "Stránka nenalezena | Med Shop", "desc": "Tato stránka neexistuje.", "noindex": true, "abs": true} #}
+{% extends "base.html" %}
+{% block nav_class %} is-solid{% endblock %}
+{% block content %}
+<section class="co"><div class="wrap"><div class="co__empty">
+  <img src="{{ root }}assets/img/cut/p82.webp" alt="" width="110">
+  <h1 class="co__h">Tady žádný med není</h1>
+  <p>Stránka, kterou hledáte, neexistuje nebo se přestěhovala.</p>
+  <a class="btn btn--dark" href="{{ root }}">Na úvodní stránku <svg><use href="#arrow"/></svg></a>
+</div></div></section>
+{% endblock %}

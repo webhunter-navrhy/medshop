@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.desc|e }}">
+{% if not site.indexovat or page.noindex %}<meta name="robots" content="noindex, nofollow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<link rel="canonical" href="{{ site.domain }}/{{ page.path }}">
+<meta name="theme-color" content="#FFE795">
+<meta name="geo.region" content="CZ-71">
+<meta name="geo.placename" content="Olomouc-Lošov">
+<meta name="geo.position" content="{{ site.geo.lat }};{{ site.geo.lon }}">
+<meta name="ICBM" content="{{ site.geo.lat }}, {{ site.geo.lon }}">
+<meta property="og:type" content="{{ page.og_type or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="{{ page.title|e }}">
+<meta property="og:description" content="{{ page.desc|e }}">
+<meta property="og:url" content="{{ site.domain }}/{{ page.path }}">
+<meta property="og:image" content="{{ site.domain }}/{{ page.og_image or 'assets/og.jpg' }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ root }}assets/favicon.svg?v={{ v.fav }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}assets/style.css?v={{ v.css }}">
+{% block head %}{% endblock %}
+<script type="application/ld+json">{{ ld_store }}</script>
+{% block jsonld %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="hex" viewBox="0 0 24 24"><path d="M12 1.6 21 6.8v10.4L12 22.4 3 17.2V6.8z" fill="currentColor"/></symbol>
+    <symbol id="hexo" viewBox="0 0 24 24"><path d="M12 2.2 20.5 7.1v9.8L12 21.8 3.5 16.9V7.1z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8zM9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V6a2 2 0 0 1 2-2h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav{% block nav_class %}{% endblock %}" id="nav">
+  <div class="nav__in">
+    <a href="{{ root }}" class="nav__logo" aria-label="Med Shop – úvod"><img src="{{ root }}assets/logo.svg?v={{ v.logo }}" alt="Med Shop" width="168" height="38"></a>
+    <nav class="nav__links" id="menu">
+      <a href="{{ home }}#medy">Druhy medu</a>
+      <a href="{{ home }}#obchod">E-shop</a>
+      <a href="{{ home }}#staciirna">Ze stáčírny</a>
+      <a href="{{ home }}#velkoodber">Pro obchody</a>
+      <a href="{{ home }}#kontakt">Kontakt</a>
+    </nav>
+    <button class="nav__cart" data-cart-open aria-label="Otevřít košík">
+      <svg><use href="#bag"/></svg><span class="nav__cart-t">Košík</span><b class="cart-count" data-count>0</b>
+    </button>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" data-burger><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img src="{{ root }}assets/logo-light.svg?v={{ v.logo }}" alt="Med Shop" width="190" class="foot__logo" loading="lazy">
+    <nav class="foot__nav">
+      <a href="{{ home }}#medy">Druhy medu</a><a href="{{ home }}#obchod">E-shop</a><a href="{{ home }}#staciirna">Ze stáčírny</a><a href="{{ home }}#velkoodber">Pro obchody</a><a href="{{ home }}#kontakt">Kontakt</a>
+    </nav>
+    <nav class="foot__legal">
+      <a href="{{ root }}doprava-a-platba/">Doprava a platba</a><a href="{{ root }}obchodni-podminky/">Obchodní podmínky</a><a href="{{ root }}ochrana-osobnich-udaju/">Ochrana osobních údajů</a>
+    </nav>
+    <p class="foot__copy">© {{ year }} Med Shop · {{ site.owner }}, {{ site.label|lower }} · {{ site.address }}, {{ site.city }} · IČ {{ site.ico }}{% if shop.vat_note %} · {{ shop.vat_note }}{% endif %}</p>
+    <p class="foot__credits">Fotografie výrobků a provozovny: Med Shop. Ilustrační fotografie z Wikimedia Commons:
+      {% for c in credits %}{{ c.artist }} ({{ c.lic }}){% if not loop.last %}, {% endif %}{% endfor %}.
+    </p>
+  </div>
+</footer>
+
+<!-- KOŠÍK -->
+<div class="drawer" id="cart" aria-hidden="true">
+  <div class="drawer__veil" data-cart-close></div>
+  <aside class="drawer__panel" role="dialog" aria-label="Košík">
+    {% if shop.test_notice %}<div class="drawer__demo"><svg><use href="#hexo"/></svg>{{ shop.test_notice }}</div>{% endif %}
+    <div class="drawer__head"><h2>Košík</h2><button data-cart-close aria-label="Zavřít"><svg><use href="#close"/></svg></button></div>
+    <ul class="drawer__list" data-cart-list></ul>
+    <div class="drawer__empty" data-cart-empty>
+      <img src="{{ root }}assets/img/cut/p69.webp" alt="" width="90" loading="lazy">
+      <p>Košík je zatím prázdný.<br>Vyberte si med z nabídky.</p>
+      <a href="{{ home }}#obchod" class="link-u" data-cart-close>Do e-shopu</a>
+    </div>
+    <div class="drawer__foot" data-cart-foot>
+      <p class="drawer__pay"><svg><use href="#hex"/></svg>Platba převodem nebo QR platbou · {{ shop.shipping_short }}</p>
+      <div class="drawer__sum"><span>Celkem za zboží</span><b data-cart-total>0 Kč</b></div>
+      <a class="btn btn--dark btn--full" href="{{ root }}objednavka/" data-checkout>Pokračovat k objednávce <svg><use href="#arrow"/></svg></a>
+    </div>
+  </aside>
+</div>
+
+<!-- DETAIL -->
+<div class="modal" id="detail" aria-hidden="true">
+  <div class="modal__veil" data-detail-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true">
+    <button class="modal__x" data-detail-close aria-label="Zavřít"><svg><use href="#close"/></svg></button>
+    <div class="modal__media" data-d-media><img alt="" data-d-img></div>
+    <div class="modal__body">
+      <p class="label" data-d-tag></p>
+      <h3 data-d-name></h3>
+      <p data-d-text></p>
+      <div class="pills" data-d-pills></div>
+      <a class="link-u modal__more" data-d-link href="#">Více o produktu <svg><use href="#arrow"/></svg></a>
+      <div class="modal__foot"><b data-d-price></b><button class="btn btn--dark" data-d-add><svg><use href="#bag"/></svg> Do košíku</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" data-toast role="status"></div>
+
+<script>window.SHOP = {{ shop_js }};</script>
+<script src="{{ root }}assets/main.js?v={{ v.js }}" defer></script>
+</body>
+</html>

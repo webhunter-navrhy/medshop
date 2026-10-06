@@ -1,67 +1,167 @@
 [
   {
-    "id": "pastovy", "name": "Pastový med", "short": "Pastový",
-    "color": "#F1E1BC", "ink": "#4A3008",
+    "id": "pastovy",
+    "name": "Pastový med",
+    "short": "Pastový",
+    "color": "#F1E1BC",
+    "ink": "#4A3008",
     "trait": "Roztírá se, ale neteče",
     "text": "Přírodní, zpravidla květový med, speciálně upravený do pastové konzistence řízenou krystalizací. Je zpracován pouze mechanicky, bez jakýchkoli přísad, a v průběhu času se už nemění — dále nekrystalizuje. Má světle bělavou až nažloutlou barvu a výbornou, lahodnou chuť.",
     "tag": "Vhodný zvláště pro děti",
     "img": "p39",
     "variants": [
-      {"label": "900 g", "price": 210, "img": "p39"},
-      {"label": "400 g", "price": 100, "img": "p40"},
-      {"label": "Zásilka", "price": 210, "img": "p45"}
-    ]
+      {
+        "label": "900 g",
+        "price": 210,
+        "img": "p39",
+        "available": true
+      },
+      {
+        "label": "400 g",
+        "price": 100,
+        "img": "p40",
+        "available": true
+      },
+      {
+        "label": "Zásilka",
+        "price": 210,
+        "img": "p45",
+        "available": true
+      }
+    ],
+    "slug": "pastovy-med",
+    "hidden": false
   },
   {
-    "id": "akatovy", "name": "Akátový med", "short": "Akátový",
-    "color": "#F4DE86", "ink": "#4A3508",
+    "id": "akatovy",
+    "name": "Akátový med",
+    "short": "Akátový",
+    "color": "#F4DE86",
+    "ink": "#4A3508",
     "trait": "Čirý a dlouho tekutý",
     "text": "Med akátový je vodojasný nebo nažloutlý s nazelenalým reflexem. Má zvlášť význačnou vůni a chuť po akátových květech, je čirý a dlouhou dobu zůstává tekutý.",
     "tag": "Vůně akátových květů",
     "img": "p68",
     "variants": [
-      {"label": "950 g", "price": 240, "img": "p68"},
-      {"label": "400 g", "price": 120, "img": "p69"},
-      {"label": "Zásilka", "price": 240, "img": "p73"}
-    ]
+      {
+        "label": "950 g",
+        "price": 240,
+        "img": "p68",
+        "available": true
+      },
+      {
+        "label": "400 g",
+        "price": 120,
+        "img": "p69",
+        "available": true
+      },
+      {
+        "label": "Zásilka",
+        "price": 240,
+        "img": "p73",
+        "available": true
+      }
+    ],
+    "slug": "akatovy-med",
+    "hidden": false
   },
   {
-    "id": "lipovy", "name": "Med lipový", "short": "Lipový",
-    "color": "#E8AE2A", "ink": "#3E2604",
+    "id": "lipovy",
+    "name": "Med lipový",
+    "short": "Lipový",
+    "color": "#E8AE2A",
+    "ink": "#3E2604",
     "trait": "Jeden z nejlepších medů naší flóry",
     "text": "Lipový med bývá u nás vydáván za nejlepší druh našich medů. Čistý med lipový je žluté až zlatožluté barvy, s vůní a chutí lipových květů. Vyniká výbornou chutí a lahodností.",
     "tag": "Vůně lipových květů",
     "img": "p56",
     "variants": [
-      {"label": "950 g", "price": 220, "img": "p56"},
-      {"label": "400 g", "price": 110, "img": "p61"},
-      {"label": "Zásilka 950 g", "price": 220, "img": "p66"}
-    ]
+      {
+        "label": "950 g",
+        "price": 220,
+        "img": "p56",
+        "available": true
+      },
+      {
+        "label": "400 g",
+        "price": 110,
+        "img": "p61",
+        "available": true
+      },
+      {
+        "label": "Zásilka 950 g",
+        "price": 220,
+        "img": "p66",
+        "available": true
+      }
+    ],
+    "slug": "lipovy-med",
+    "hidden": false
   },
   {
-    "id": "kvetovy", "name": "Med květový", "short": "Květový",
-    "color": "#D9821C", "ink": "#FFF4D8",
+    "id": "kvetovy",
+    "name": "Med květový",
+    "short": "Květový",
+    "color": "#D9821C",
+    "ink": "#FFF4D8",
     "trait": "Ceněný v lidovém léčitelství",
     "text": "Přírodní koncentrát nektaru z květů rostlin, převážně rostlin léčivých. Je snadno stravitelný díky obsahu jednoduchých cukrů — glukózy a fruktózy. Pylová zrna různých rostlin ho obohacují o významné přírodní látky: rostlinné hormony, éterické oleje a aromatické látky.",
     "tag": "Z květů léčivých rostlin",
     "img": "p35",
     "variants": [
-      {"label": "950 g", "price": 190, "img": "p35"},
-      {"label": "400 g", "price": 90, "img": "p37"},
-      {"label": "Zásilka", "price": 190, "img": "p44"}
-    ]
+      {
+        "label": "950 g",
+        "price": 190,
+        "img": "p35",
+        "available": true
+      },
+      {
+        "label": "400 g",
+        "price": 90,
+        "img": "p37",
+        "available": true
+      },
+      {
+        "label": "Zásilka",
+        "price": 190,
+        "img": "p44",
+        "available": true
+      }
+    ],
+    "slug": "kvetovy-med",
+    "hidden": false
   },
   {
-    "id": "lucni", "name": "Luční med", "short": "Luční",
-    "color": "#A9621A", "ink": "#FFF4D8",
+    "id": "lucni",
+    "name": "Luční med",
+    "short": "Luční",
+    "color": "#A9621A",
+    "ink": "#FFF4D8",
     "trait": "Med letní snůšky",
     "text": "Má barvu žlutou až temně hnědou a příjemnou chuť. Jde o medy letní snůšky.",
     "tag": "Letní snůška",
     "img": "p80",
     "variants": [
-      {"label": "950 g", "price": 190, "img": "p80"},
-      {"label": "400 g", "price": 90, "img": "p81"},
-      {"label": "Zásilka", "price": 190, "img": "p82"}
-    ]
+      {
+        "label": "950 g",
+        "price": 190,
+        "img": "p80",
+        "available": true
+      },
+      {
+        "label": "400 g",
+        "price": 90,
+        "img": "p81",
+        "available": true
+      },
+      {
+        "label": "Zásilka",
+        "price": 190,
+        "img": "p82",
+        "available": true
+      }
+    ],
+    "slug": "lucni-med",
+    "hidden": false
   }
 ]

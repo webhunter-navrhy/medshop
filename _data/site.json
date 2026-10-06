@@ -1,10 +1,10 @@
 {
   "name": "Med Shop",
   "title": "Med Shop — stáčírna medu Jiří Tichý, Olomouc-Lošov",
-  "description": "Lipový, květový, luční, akátový a pastový med ze stáčírny Jiřího Tichého v Olomouci-Lošově. Sklenice od 400 g, konve i sudy pro obchody.",
+  "description": "Med ze stáčírny Jiřího Tichého v Olomouci-Lošově: lipový, květový, luční, akátový a pastový med ve sklenicích 400 g a 950 g, dárkový koš, včelí vosk. Objednávka online, osobní odběr v Lošově.",
   "owner": "Jiří Tichý",
   "label": "Stáčírna medu",
-  "address": "Kopernikova 166/14",
+  "address": "Koperníkova 166/14",
   "city": "779 00 Olomouc-Lošov",
   "ico": "646 33 772",
   "dic": "CZ5506082175",
@@ -35,7 +35,7 @@
   ],
   "intro": {
     "label": "Co je med?",
-    "quote": "Med je hodnotná potravina přírodního charakteru, vytvořená společenstvím včel.",
+    "quote": "Med je hodnotná potravina přírodního charakteru, vytvořená *společenstvím včel.*",
     "text": "Květový med je koncentrát nektaru z květů, snadno stravitelný a s pylovými zrny různých léčivých rostlin. Pastovaný med je zpracován pouze mechanicky, bez jakýchkoli přísad, a během skladování se už nemění.",
     "closing": "Co může být lepší než sesbíraný nektar květů z rostlin a stromů naší přírody?"
   },
@@ -76,9 +76,15 @@
   ],
   "contact_note": "Zásilku si můžete po telefonické domluvě vyzvednout přímo na provozovně, bez poplatku za poštovné.",
   "access": "Příjezd k provozovně vede po stávající komunikaci v ulici Kopernikova a dále po vlastním pozemku až k objektu.",
-  "price_note": "Ceny převzaté ze současného webu med-shop.cz.",
   "geo": {
     "lat": 49.62056,
     "lon": 17.36644
+  },
+  "domain": "https://www.med-shop.cz",
+  "indexovat": false,
+  "region": "Olomoucký kraj",
+  "seo": {
+    "title": "Med Shop – stáčírna medu Olomouc-Lošov | lipový, akátový, pastový med",
+    "description": "Med ze stáčírny Jiřího Tichého v Olomouci-Lošově: lipový, květový, luční, akátový a pastový med ve sklenicích 400 g a 950 g, dárkový koš, včelí vosk. Objednávka online, osobní odběr v Lošově."
   }
 }

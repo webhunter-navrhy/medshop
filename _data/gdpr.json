@@ -1,0 +1,32 @@
+{
+  "title": "Ochrana osobních údajů",
+  "numbered": true,
+  "updated": "",
+  "intro": "Správcem osobních údajů je Jiří Tichý, IČ 646 33 772, Koperníkova 166/14, Lošov, 779 00 Olomouc (dále jen „správce“). Kontakt ve věcech osobních údajů: info@med-shop.cz.",
+  "sections": [
+    {
+      "h": "Jaké údaje zpracováváme",
+      "p": "Při objednávce zpracováváme údaje, které nám sami vyplníte: jméno a příjmení, e-mail, telefon, adresu, obsah objednávky, poznámku a údaje o platbě. Při komunikaci e-mailem nebo telefonem zpracováváme údaje, které nám v ní sdělíte."
+    },
+    {
+      "h": "Proč a na jakém základě",
+      "p": "Údaje zpracováváme, abychom mohli vyřídit Vaši objednávku, domluvit převzetí zboží a vyřídit případnou reklamaci (plnění smlouvy, čl. 6 odst. 1 písm. b) GDPR), a dále pro splnění zákonných povinností, zejména účetních a daňových (čl. 6 odst. 1 písm. c) GDPR).\nObchodní sdělení bez Vašeho souhlasu nezasíláme a údaje neprodáváme."
+    },
+    {
+      "h": "Jak dlouho údaje uchováváme",
+      "p": "Po dobu nezbytnou k vyřízení objednávky a uplatnění práv z kupní smlouvy a dále po dobu, kterou ukládají právní předpisy (účetní a daňové doklady obvykle 10 let)."
+    },
+    {
+      "h": "Kdo s údaji pracuje",
+      "p": "Údaje zpracovává správce. Technicky s nimi mohou pracovat poskytovatelé služeb, které pro provoz e-shopu používáme: provoz webu a administrace (GitHub, Cloudflare), odesílání e-mailů s potvrzením objednávky (Resend) a správa webu (WebHunter s.r.o.). Při zaslání zboží předáváme dopravci jen údaje nutné k doručení."
+    },
+    {
+      "h": "Cookies a měření",
+      "p": "Web nepoužívá reklamní ani analytické cookies. Obsah košíku se ukládá jen ve Vašem prohlížeči (localStorage), aby se při procházení webu neztratil."
+    },
+    {
+      "h": "Vaše práva",
+      "p": "Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost údajů a právo vznést námitku. Stačí nám napsat na info@med-shop.cz.\nPokud se domníváte, že s údaji nakládáme v rozporu s předpisy, můžete podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz)."
+    }
+  ]
+}

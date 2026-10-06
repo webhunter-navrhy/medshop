@@ -1,0 +1,33 @@
+{
+  "bank": {
+    "account": "",
+    "iban": "",
+    "name": "Jiří Tichý"
+  },
+  "due_days": 7,
+  "vat_note": "Prodávající není plátcem DPH.",
+  "shipping": [
+    {
+      "id": "osobni",
+      "name": "Osobní odběr v Lošově",
+      "note": "Koperníkova 166/14, Olomouc-Lošov. Po telefonické domluvě, bez poplatku za poštovné.",
+      "price": 0,
+      "free_from": null,
+      "address": false,
+      "active": true
+    },
+    {
+      "id": "zasilka",
+      "name": "Zaslání zásilkou",
+      "note": "",
+      "price": null,
+      "free_from": null,
+      "address": true,
+      "active": false
+    }
+  ],
+  "checkout_note": "Platí se předem bankovním převodem. Platební údaje a QR kód uvidíte hned po odeslání objednávky a pošleme Vám je i e-mailem.",
+  "thanks": "Jakmile platba dorazí na náš účet, objednávku připravíme a ozveme se Vám.",
+  "shipping_text": "Objednávku si můžete po telefonické domluvě vyzvednout přímo na provozovně v Olomouci-Lošově, bez poplatku za poštovné.",
+  "test_notice": "Zkušební provoz e-shopu – objednávky zatím nevyřizujeme."
+}

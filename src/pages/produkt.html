@@ -1,0 +1,60 @@
+{# {"id": "produkt", "per": "item"} #}
+{% extends "base.html" %}
+{% block jsonld %}<script type="application/ld+json">{{ item.ld }}</script>{% endblock %}
+{% block nav_class %} is-solid{% endblock %}
+{% block content %}
+{% set it = item %}
+<section class="pdp" style="--hc:{{ it.color }};--hi:{{ it.ink }}">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Drobečková navigace">
+      <a href="{{ root }}">Med Shop</a><span>/</span><a href="{{ root }}#obchod">E-shop</a><span>/</span><span aria-current="page">{{ it.name }}</span>
+    </nav>
+    <div class="pdp__grid" data-pdp="{{ it.id }}" data-v="{{ it.dv }}">
+      <div class="pdp__media">
+        <div class="spectrum__glow"></div>
+        <img src="{{ it.variants[it.dv].img|pimg }}" alt="{{ it.name }} {{ it.variants[it.dv].label }}" width="400" height="560" data-pdp-img fetchpriority="high">
+      </div>
+      <div class="pdp__info">
+        {% if it.trait %}<p class="spectrum__trait">{{ it.trait }}</p>{% elif it.tag %}<p class="spectrum__trait">{{ it.tag }}</p>{% endif %}
+        <h1 class="pdp__name">{{ it.name }}</h1>
+        <p class="pdp__text">{{ it.text }}{% if it.note %} <em>{{ it.note }}</em>{% endif %}</p>
+        {% if it.priced %}
+        <div class="spectrum__vars" data-pdp-vars>
+          {% for vr in it.variants %}
+          <button class="vbtn{% if loop.index0 == it.dv %} is-on{% endif %}{% if not vr.available %} is-out{% endif %}" data-i="{{ loop.index0 }}"><small>{{ vr.label }}</small><b>{% if vr.available %}{{ vr.price|kc }}{% if it.unit %}<small> / {{ it.unit }}</small>{% endif %}{% else %}Vyprodáno{% endif %}</b></button>
+          {% endfor %}
+        </div>
+        <div class="pdp__buy">
+          <div class="qty qty--lg"><button data-pq="-1" aria-label="Méně"><svg><use href="#minus"/></svg></button><span data-pdp-q>1</span><button data-pq="1" aria-label="Více"><svg><use href="#plus"/></svg></button></div>
+          <button class="btn btn--dark" data-pdp-add><svg><use href="#bag"/></svg> Do košíku</button>
+        </div>
+        {% else %}
+        <p class="pdp__ask"><b>{{ it.price_text or 'Cena dle množství' }}</b> – napište nám, rádi připravíme nabídku.</p>
+        <a class="btn btn--dark" href="mailto:{{ site.email }}?subject=Popt%C3%A1vka%20%E2%80%93%20{{ it.name|urlencode }}">Poptat <svg><use href="#arrow"/></svg></a>
+        {% endif %}
+        <ul class="pdp__facts">
+          <li><svg><use href="#hex"/></svg>Ze stáčírny medu v Olomouci-Lošově</li>
+          <li><svg><use href="#hex"/></svg>Platba převodem nebo QR platbou</li>
+          <li><svg><use href="#hex"/></svg>{{ shop.shipping_short }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if others %}
+<section class="more">
+  <div class="wrap">
+    <p class="label">{% if it.kind == 'med' %}Další druhy medu{% else %}Mohlo by se hodit{% endif %}</p>
+    <div class="more__row">
+      {% for o in others %}
+      <a class="more__item" href="{{ o.url }}" style="--c:{{ o.color or '#F3D88A' }}">
+        <span class="more__img"><img src="{{ o.img|pimg }}" alt="" loading="lazy"></span>
+        <b>{{ o.name }}</b><small>{{ o.from_price }}</small>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

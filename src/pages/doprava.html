@@ -1,0 +1,27 @@
+{# {"out": "doprava-a-platba/index.html", "id": "doprava", "title": "Doprava a platba | Med Shop Olomouc-Lošov", "desc": "Jak u Med Shopu převzít a zaplatit objednávku medu: osobní odběr ve stáčírně v Olomouci-Lošově, platba bankovním převodem a QR platbou."} #}
+{% extends "base.html" %}
+{% block nav_class %} is-solid{% endblock %}
+{% block content %}
+<section class="legal">
+  <div class="wrap legal__in">
+    <nav class="crumbs" aria-label="Drobečková navigace"><a href="{{ root }}">Med Shop</a><span>/</span><span aria-current="page">Doprava a platba</span></nav>
+    <h1 class="legal__h">Doprava a platba</h1>
+    {% if shop.shipping_text %}<div class="legal__intro">{{ shop.shipping_text|paras }}</div>{% endif %}
+    <section class="legal__sec">
+      <h2>Způsoby převzetí</h2>
+      <ul class="dp">
+        {% for s in shipping %}<li><b>{{ s.name }}</b><span>{% if s.price %}{{ s.price|kc }}{% else %}zdarma{% endif %}{% if s.free_from %} · od {{ s.free_from|kc }} zdarma{% endif %}</span>{% if s.note %}<p>{{ s.note }}</p>{% endif %}</li>{% endfor %}
+      </ul>
+    </section>
+    <section class="legal__sec">
+      <h2>Platba</h2>
+      <p>Objednávky se platí předem bankovním převodem. Po odeslání objednávky se Vám zobrazí platební údaje a QR kód pro QR Platbu – stačí ho naskenovat v mobilní aplikaci banky. Stejné údaje Vám pošleme i e-mailem.</p>
+      <p>Jako variabilní symbol slouží číslo objednávky.{% if shop.due_days %} Částku prosíme uhradit do {{ shop.due_days }} dnů od objednání.{% endif %}{% if shop.vat_note %} {{ shop.vat_note }}{% endif %}</p>
+    </section>
+    <section class="legal__sec">
+      <h2>Větší odběry</h2>
+      <p>Konve 35 kg, sudy 280 kg a dodávky pro obchody a pekárny domlouváme individuálně – <a href="mailto:{{ site.email }}">{{ site.email }}</a>, tel. <a href="tel:{{ site.mobile|tel }}">{{ site.mobile }}</a>.</p>
+    </section>
+  </div>
+</section>
+{% endblock %}
