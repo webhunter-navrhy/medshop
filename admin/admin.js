@@ -233,6 +233,7 @@ function fText(obj, key, label, o = {}) {
   return h('label.field', {}, h('span', {}, label), inp, o.hint ? h('small', {}, o.hint) : null);
 }
 function fSelect(obj, key, label, options, o = {}) {
+  if (obj[key] != null && !options.some(([v]) => String(v) === String(obj[key]))) options = [[obj[key], o.custom ? o.custom(obj[key]) : String(obj[key])], ...options];
   const sel = h('select', { onchange: (e) => { const v = e.target.value; obj[key] = o.num ? +v : v; bump(); o.on?.(); } },
     options.map(([v, t]) => h('option', { value: v }, t)));
   sel.value = String(obj[key] ?? options[0][0]);
@@ -500,7 +501,7 @@ function vHoneys() {
         row2(fText(x, 'trait', 'Vlastnost (nad názvem)', { ph: 'Čirý a dlouho tekutý' }), fText(x, 'tag', 'Štítek na kartě', { ph: 'Vůně lipových květů' })),
         fText(x, 'text', 'Popis', { multi: true, rows: 5 }),
         fVariants(x, r),
-        row2(fColor(x, 'color', 'Barva medu', 'Pozadí police a karty.'), fSelect(x, 'ink', 'Barva písma na této barvě', [['#3E2604', 'Tmavé písmo (na světlé med)'], ['#FFF4D8', 'Světlé písmo (na tmavé med)']])),
+        row2(fColor(x, 'color', 'Barva medu', 'Pozadí police a karty.'), fSelect(x, 'ink', 'Barva písma na této barvě', [['#3E2604', 'Tmavé písmo (na světlé med)'], ['#FFF4D8', 'Světlé písmo (na tmavé med)']], { custom: (c) => (parseInt(c.slice(1, 3), 16) < 128 ? 'Tmavé písmo' : 'Světlé písmo') + ' (původní odstín)' })),
         fImage(x, 'img', 'Hlavní fotka (sklenice na polici)', x.name, r),
         fCheck(x, 'hidden', 'Skrýt z webu (např. když med dočasně nemáte)'),
         x.slug ? h('p', { style: 'color:var(--muted);font-size:.82rem' }, `Adresa stránky: ${shopUrl()}med/${x.slug}/`) : null),
