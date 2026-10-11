@@ -1,7 +1,7 @@
 {
   "bank": {
-    "account": "",
-    "iban": "",
+    "account": "247936003/0800",
+    "iban": "CZ3808000000000247936003",
     "name": "Jiří Tichý"
   },
   "due_days": 7,
