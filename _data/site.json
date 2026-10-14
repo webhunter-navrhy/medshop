@@ -81,7 +81,7 @@
     "lon": 17.36644
   },
   "domain": "https://www.med-shop.cz",
-  "indexovat": false,
+  "indexovat": true,
   "region": "Olomoucký kraj",
   "seo": {
     "title": "Med Shop – stáčírna medu Olomouc-Lošov | lipový, akátový, pastový med",
