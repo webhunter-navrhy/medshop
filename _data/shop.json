@@ -17,17 +17,62 @@
       "active": true
     },
     {
-      "id": "zasilka",
-      "name": "Zaslání zásilkou",
+      "id": "balikovna",
+      "name": "Česká pošta – Balíkovna",
+      "note": "Výdejní místo, bez nutnosti zadávat adresu doručení.",
+      "price": 67,
+      "free_from": 1500,
+      "address": false,
+      "active": true
+    },
+    {
+      "id": "balik-posta",
+      "name": "Česká pošta – balík na poštu",
       "note": "",
-      "price": null,
+      "price": 120,
+      "free_from": 1500,
+      "address": false,
+      "active": true
+    },
+    {
+      "id": "balik-ruka",
+      "name": "Česká pošta – balík do ruky",
+      "note": "",
+      "price": 140,
+      "free_from": 1500,
+      "address": true,
+      "active": true
+    },
+    {
+      "id": "ppl-misto",
+      "name": "PPL – výdejní místo",
+      "note": "",
+      "price": 89,
+      "free_from": 1500,
+      "address": false,
+      "active": true
+    },
+    {
+      "id": "ppl-adresa",
+      "name": "PPL – na adresu",
+      "note": "",
+      "price": 119,
+      "free_from": 1500,
+      "address": true,
+      "active": true
+    },
+    {
+      "id": "paleta",
+      "name": "TOP TRANS – paleta do 100 kg",
+      "note": "Nad 100 kg cena individuálně, napište nám.",
+      "price": 790,
       "free_from": null,
       "address": true,
-      "active": false
+      "active": true
     }
   ],
   "checkout_note": "Platí se předem bankovním převodem. Platební údaje a QR kód uvidíte hned po odeslání objednávky a pošleme Vám je i e-mailem.",
   "thanks": "Jakmile platba dorazí na náš účet, objednávku připravíme a ozveme se Vám.",
-  "shipping_text": "Objednávku si můžete po telefonické domluvě vyzvednout přímo na provozovně v Olomouci-Lošově, bez poplatku za poštovné.",
+  "shipping_text": "Objednávku si můžete vyzvednout osobně v Olomouci-Lošově, nebo Vám ji pošleme Českou poštou (Balíkovna, balík na poštu, balík do ruky), přes PPL nebo na paletě. Při objednávce od 1 500 Kč je doprava zdarma. Kdyby se zboží cestou poškodilo nebo ztratilo, pošleme Vám nové.",
   "test_notice": ""
 }
